@@ -2,17 +2,19 @@ const express = require("express");
 const mysql = require("mysql");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
-
+const dotenv = require("dotenv");
+dotenv.config();
 const encoder = bodyParser.urlencoded();
 const app = express();
 
 app.set("view engine", "ejs");
 app.set("views", "views");
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "auth",
+  host: process.env.HOST,
+  user: process.env.USER,
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE,
+  port: process.env.PORT,
 });
 
 db.connect((error) => {
