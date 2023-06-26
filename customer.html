@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CUSTOMER</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .class {
+        width: 100%;
+      }
+
+      .container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .form {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        justify-content: center;
+        align-items: center;
+      }
+      .inputBox {
+        width: 80%;
+        height: auto;
+        padding: 4px;
+      }
+
+      .button {
+        width: 50%;
+        height: auto;
+        padding: 10px 10px 4px 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form class="form" action="/customers" method="post">
+        <input
+          name="order_date"
+          class="inputBox"
+          type="date"
+          placeholder="Enter order date"
+        />
+        <input
+          name="company"
+          class="inputBox"
+          type="text"
+          placeholder="Enter company"
+        />
+        <input
+          name="owner"
+          class="inputBox"
+          type="text"
+          placeholder="Enter owner"
+        />
+        <input
+          name="item"
+          class="inputBox"
+          type="text"
+          placeholder="Enter item"
+        />
+        <input
+          name="quantity"
+          class="inputBox"
+          type="number"
+          placeholder="Enter quantity"
+        />
+        <input
+          name="weight"
+          class="inputBox"
+          type="number"
+          placeholder="Enter weight"
+        />
+        <input
+          name="request_for_shipment"
+          class="inputBox"
+          type="text"
+          placeholder="Request for shipment "
+        />
+        <input
+          name="tracking_id"
+          class="inputBox"
+          type="text"
+          placeholder="Enter Tracking ID"
+        />
+        <input
+          name="shipment_size"
+          class="inputBox"
+          type="text"
+          placeholder="Enter Shipment size"
+        />
+        <input
+          name="box_count"
+          class="inputBox"
+          type="number"
+          placeholder="Enter Box count"
+        />
+        <input
+          name="specification"
+          class="inputBox"
+          type="text"
+          placeholder="Enter specification"
+        />
+        <input
+          name="checklist_quantity"
+          class="inputBox"
+          type="text"
+          placeholder="Enter checklist quantity "
+        />
+        <input class="button" type="submit" value="SUBMIT" />
+      </form>
+    </div>
+  </body>
+</html>
