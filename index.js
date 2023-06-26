@@ -57,24 +57,23 @@ app.get("/admin", (req, res) => {
     if (err) {
       res.send("ERROR");
     } else {
-      Object.keys(data).forEach(function (key) {
-        var row = data[key];
-        console.log(row.quantity);
+      console.log(data[1].quantity);
 
-        const totalQuantity = row.quantity + row.quantity;
-        const totalWeight = row.weight + row.weight;
-        const boxCount = row.box_count + row.box_count;
-        res.render("admin", {
-          cus1quantity: row.quantity,
-          cus2quantity: row.quantity,
-          sumQuantity: totalQuantity,
-          cus1weight: row.weight,
-          cus2weight: row.weight,
-          sumWeight: totalWeight,
-          cus1box_count: row.box_count,
-          cus2box_count: row.box_count,
-          sumQuan: boxCount,
-        });
+      const totalQuantity = data[0].quantity + data[1].quantity;
+      const totalWeight = data[0].weight + data[1].weight;
+      const boxCount = data[0].box_count + data[1].box_count;
+      console.log(totalQuantity, totalWeight, boxCount);
+
+      res.render("admin", {
+        cus1quantity: data[0].quantity,
+        cus2quantity: data[1].quantity,
+        sumQuantity: totalQuantity,
+        cus1weight: data[0].weight,
+        cus2weight: data[1].weight,
+        sumWeight: totalWeight,
+        cus1box_count: data[0].box_count,
+        cus2box_count: data[1].box_count,
+        sumQuan: boxCount,
       });
     }
   });
