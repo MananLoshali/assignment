@@ -6,6 +6,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const encoder = bodyParser.urlencoded();
 const app = express();
+const PORT = process.env.PORT || 5000;
 
 app.set("view engine", "ejs");
 app.set("views", "views");
@@ -109,6 +110,6 @@ app.post("/customers", encoder, (req, res) => {
   });
 });
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
   console.log("The server is running at port 5000");
 });
